@@ -1,5 +1,16 @@
 def selection_sort(arr)
   # type your code in here
+  sorted_array = []
+  
+  until arr.length == 0
+  min = arr.min 
+  idx = arr.index(min)
+  sorted_array.push(min)
+  arr.delete_at(idx) 
+  end
+  
+  return sorted_array
+  
 end
 
 if __FILE__ == $PROGRAM_NAME

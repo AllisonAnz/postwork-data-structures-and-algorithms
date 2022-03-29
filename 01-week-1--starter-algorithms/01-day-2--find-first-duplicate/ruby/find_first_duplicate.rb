@@ -1,5 +1,14 @@
+require 'set'
+
 def find_first_duplicate(arr)
-  # type your code in here
+  uniques = Set.new 
+
+  arr.each do |value| 
+    return value if uniques.include?(value)
+  end
+    uniques.add(value)
+  end
+    -1 
 end
 
 if __FILE__ == $PROGRAM_NAME
@@ -15,4 +24,9 @@ if __FILE__ == $PROGRAM_NAME
 end
 
 # Please add your pseudocode to this file
+# create empty set to hold values 
+# iterate over array values
+# if set includes value return value 
+# if not, add it to the set 
+# if no matches are found, return -1
 # And a written explanation of your solution

@@ -1,5 +1,12 @@
 function selectionSort(arr) {
   // type your code here
+  const sorted = []
+  while (arr.length < 0){
+    min = Math.min(...arr)
+    idx = arr.indexOf(min)
+    sorted.push(min)
+    arr.spice
+  }
 }
 
 if (require.main === module) {
@@ -20,4 +27,13 @@ if (require.main === module) {
 module.exports = selectionSort;
 
 // Please add your pseudocode to this file
+/*****************************************
+ * initalize with an empty array called sorted
+ * 
+ * Loop array length times 
+ *  store minimum value in array in min 
+ * remove minimum value from input array 
+ * 
+ * return sorted 
+ *****************************************/
 // And a written explanation of your solution
