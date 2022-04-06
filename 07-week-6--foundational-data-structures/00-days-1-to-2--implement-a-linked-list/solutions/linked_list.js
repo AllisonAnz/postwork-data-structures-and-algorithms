@@ -20,6 +20,7 @@ class LinkedList {
 
     return this.head;
   }
+  
 
   // print each node's value on its own line
   // use your iterate method to be DRY! Don't get caught in the code rain, brrr.
@@ -161,6 +162,8 @@ class LinkedList {
   }
 }
 
+//The Node class contains a constructor, which function will be to 
+//execute when a new object is created
 class Node {
   constructor(value = null, next = null) {
     this.value = value;
@@ -318,3 +321,43 @@ if (require.main === module) {
 module.exports = {
   Node, LinkedList
 };
+
+
+head = new Node("one", new Node("two", new Node("three")))
+list = new LinkedList(head)
+
+console.log(list) //=> shows the list
+list.print() // => prints each node 
+
+console.log(list.find("five")) //=> null 
+
+console.log(list.find("one")) //=> Node {...}
+
+list.addFirst(new Node("zero")), 
+list.print()  //=> zero, one, two, three
+  
+list.addLast(new Node("four")), 
+list.print() //=> zero, one, two, three, four
+
+list.removeFirst(), 
+list.print() //=> one, two, three, four
+  
+list.removeLast(), 
+list.print() //=> one, two, three
+
+list.replace(1, new Node('hello')), 
+list.print() //=> one, hello, three
+
+list.replace(2, new Node('bye')), 
+list.print() //=> one, hello, bye
+console.log(list.tail.value) // see if the tail was was replaced => bye
+  
+list.insert(1, new Node("I'm New!")), 
+list.print() //=> one, I'm New!, hello, bye 
+  
+list.insert(4, new Node("New Tail!")), 
+list.print() //=> one, I'm New!, hello, bye, New Tail! 
+console.log(list.tail.value)
+  
+list.remove(1), 
+list.print() //one, hello, bye, New Tail! 
